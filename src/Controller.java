@@ -10,6 +10,7 @@ public class Controller {
     public Controller(){
         scanner = new Scanner(System.in);
         new HelpCommand("help");
+        new MoveCommand("move");
     }
 
     public Command Listen(){
@@ -29,12 +30,15 @@ public class Controller {
     }
 
     private void unknownInput(){
-        Main.textBuffer();
-        System.out.println("Sorry, I don't understand. Please try again.");
+        Main.unknownInput();
         Listen();
     }
 
     public static void addCommand(String key, Command command){
         allCommands.put(key, command);
+    }
+
+    public static int randomNumber(int min, int max){
+        return (int) ((Math.random() * (max - min)) + min);
     }
 }

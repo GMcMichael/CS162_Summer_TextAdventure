@@ -4,16 +4,22 @@ public class Location {
 
     private HashMap<String, Location> connections = new HashMap<>();
     private String name;
-    private String key;
     private String description = "in an unknown area";
 
-    public Location(String name, String key){
+    public Location(String name){
         setName(name);
-        setKey(key);
     }
 
     public void addConnection(Location location, String dir){
+        if(dir.toLowerCase().equals("n")) dir = "north";
+        else if(dir.toLowerCase().equals("s")) dir = "south";
+        else if(dir.toLowerCase().equals("e")) dir = "east";
+        else if(dir.toLowerCase().equals("w")) dir = "west";
         connections.put(dir.toLowerCase(), location);
+    }
+
+    public Location getConnection(String key){
+        return connections.get(key);
     }
 
     public HashMap<String, Location> getConnections(){
@@ -32,14 +38,6 @@ public class Location {
         this.name = name;
     }
 
-    public String getKey() {
-        return key;
-    }
-
-    public void setKey(String key) {
-        this.key = key;
-    }
-
     public String getDescription() {
         return description;
     }
@@ -50,6 +48,20 @@ public class Location {
 
     @Override
     public String toString() {
-        return description;
+        String newDesc = description;
+        if(connections.size() == 0) newDesc += ". There are no passageways";
+        else if (connections.size() == 1){
+            newDesc += ". There is 1 passageway to the ";
+            for (String key: connections.keySet()) {
+                newDesc += key;
+            }
+        }
+        else {
+            newDesc += ". There are " + connections.size() + " passageways";
+            for (String key : connections.keySet()) {
+                newDesc += ", One to the " + key;
+            }
+        }
+        return newDesc;
     }
 }

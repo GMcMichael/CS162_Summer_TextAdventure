@@ -8,9 +8,13 @@ public abstract class Command {
         Controller.addCommand(activator, this);
     }
 
-    abstract void run();
+    abstract boolean run();
 
     public void setModifier(String modifier){
         if(modifier != null) this.modifier = modifier;
+    }
+
+    public String getModifier(){
+        return modifier;
     }
 }

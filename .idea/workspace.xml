@@ -1,7 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b21e0314-b505-4701-851f-25f14f941aff" name="Default Changelist" comment="" />
+    <list default="true" id="b21e0314-b505-4701-851f-25f14f941aff" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Commands/MoveCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS162 _TextBased/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CS162 _TextBased/Controller.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS162 _TextBased/HelpCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CS162 _TextBased/HelpCommand.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS162 _TextBased/Location.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CS162 _TextBased/Location.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS162 _TextBased/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CS162 _TextBased/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Command.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Command.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Commands/HelpCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Commands/HelpCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Location.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Location.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,6 +25,9 @@
         <option value="Class" />
       </list>
     </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1e4Gn1QRuuITKtRxa8DAXejnBH9" />
   <component name="ProjectViewState">
@@ -59,10 +74,10 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="72" y="201" key="#Project_Structure/0.0.1920.1080@0.0.1920.1080" timestamp="1593596925935" />
-    <state x="765" y="223" key="#com.intellij.ide.util.MemberChooser" timestamp="1593597337704">
+    <state x="765" y="223" key="#com.intellij.ide.util.MemberChooser" timestamp="1593677874628">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="765" y="223" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1080@0.0.1920.1080" timestamp="1593597337704" />
+    <state x="765" y="223" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1080@0.0.1920.1080" timestamp="1593677874628" />
     <state x="133" y="468" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1593597311031">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -71,22 +86,22 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="276" y="423" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.packages/0.0.1920.1080@0.0.1920.1080" timestamp="1593597313813" />
-    <state width="1877" height="295" key="GridCell.Tab.0.bottom" timestamp="1593599912677">
+    <state width="1877" height="241" key="GridCell.Tab.0.bottom" timestamp="1593679738403">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1877" height="295" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1593599912677" />
-    <state width="1877" height="295" key="GridCell.Tab.0.center" timestamp="1593599912676">
+    <state width="1877" height="241" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1593679738403" />
+    <state width="1877" height="241" key="GridCell.Tab.0.center" timestamp="1593679738403">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1877" height="295" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1593599912676" />
-    <state width="1877" height="295" key="GridCell.Tab.0.left" timestamp="1593599912676">
+    <state width="1877" height="241" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1593679738403" />
+    <state width="1877" height="241" key="GridCell.Tab.0.left" timestamp="1593679738403">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1877" height="295" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1593599912676" />
-    <state width="1877" height="295" key="GridCell.Tab.0.right" timestamp="1593599912676">
+    <state width="1877" height="241" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1593679738403" />
+    <state width="1877" height="241" key="GridCell.Tab.0.right" timestamp="1593679738403">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1877" height="295" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1593599912676" />
+    <state width="1877" height="241" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1593679738403" />
     <state x="0" y="117" key="SettingsEditor" timestamp="1593596991332">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -95,6 +110,10 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="296" y="321" key="chooseDestDirectoryDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1593597298370" />
+    <state x="656" y="363" key="com.intellij.ide.util.TipDialog" timestamp="1593671097817">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="656" y="363" key="com.intellij.ide.util.TipDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1593671097817" />
     <state x="198" y="136" width="607" height="804" key="find.popup" timestamp="1593597236738">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>

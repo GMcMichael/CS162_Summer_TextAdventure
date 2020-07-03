@@ -9,9 +9,14 @@ public class Main {
     private static Controller controller;
     private static boolean gameRunning;
     private static ArrayList<Location[][]> RoomLists = new ArrayList<Location[][]>();
+    private static Location startLocation;
+    private static Location mazeExit;
+    private static String mazeExitDir;
     private static Location[][] currLocation;
+    private static MapDisplay mapDisplay;
 
     public static void main(String[] args){
+        //MapDisplay mapDisplay = new MapDisplay(50, generateMaze(5, 5));
         //System.out.println(generateMaze(5, 5));
         System.out.println("Welcome to " + name + "!");
         scanner = new Scanner(System.in);
@@ -56,7 +61,41 @@ public class Main {
             x = nCoords[0];
             y = nCoords[1];
         }
-        return dirs;//todo need to set start and end points
+        Location startLocation;
+        int side = Controller.randomNumber(0, 4);
+        int sX = 0;
+        int sY = 0;
+        String dir;
+        switch (side){
+            case 0:
+                dir = "north";
+                mazeExitDir = "south";
+                sX = Controller.randomNumber(0, mazeCols);
+                break;
+            case 1:
+                dir = "east";
+                mazeExitDir = "west";
+                sX = mazeCols;
+                sY = Controller.randomNumber(0, mazeRows);
+                break;
+            case 2:
+                dir = "south";
+                mazeExitDir = "north";
+                sX = Controller.randomNumber(0, mazeCols);
+                sY = mazeRows;
+                break;
+            default:
+                dir = "west";
+                mazeExitDir = "east";
+                sY = Controller.randomNumber(0, mazeRows);
+                break;
+        }
+        startLocation = dirs[sX][sY];
+        mazeExit = new Location("Maze Exit");
+        System.out.println(sX + " " + sY);
+        setStartLocation(startLocation, dir);//todo this sets start to exit, change to random but not exit
+        mapDisplay = new MapDisplay(50, dirs);//todo I generate the map image here
+        return dirs;
     }
 
     private static int[] getNewCoords(int x, int y, int xMax, int yMax){
@@ -96,10 +135,10 @@ public class Main {
         Location[][] maze = generateMaze(5, 5);
         RoomLists.add(maze);
         currLocation = maze;
-        player.setCurrLocation(currLocation[0][0]);//todo update when I create the starting point and ending points
+        player.setCurrLocation(getStartLocation());
     }
 
-    private static void startGame(){//todo maybe create a map so players can view where they have been with a setting to turn in on/off to make it easier/harder
+    private static void startGame(){
         textBuffer();
         controller = new Controller();
         player = new Player();
@@ -133,5 +172,30 @@ public class Main {
 
     public static Player getPlayer() {
         return player;
+    }
+
+    private static Location getStartLocation() {
+        return startLocation;
+    }
+
+    private static void setStartLocation(Location startLocation, String dir) {
+        startLocation.setMazeExit(true, dir, mazeExit);
+        Main.startLocation = startLocation;
+    }
+
+    public static String getMazeExitDir() {
+        return mazeExitDir;
+    }
+
+    public static MapDisplay getMapDisplay() {
+        return mapDisplay;
+    }
+
+    public static void setMapDisplay(MapDisplay mapDisplay) {
+        Main.mapDisplay = mapDisplay;
+    }
+
+    public static Location[][] getCurrLocation() {
+        return currLocation;
     }
 }

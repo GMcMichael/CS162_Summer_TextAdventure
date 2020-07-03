@@ -5,6 +5,8 @@ public class Location {
     private HashMap<String, Location> connections = new HashMap<>();
     private String name;
     private String description = "in an unknown area";
+    private boolean mazeExit;
+    private String exitDir;
 
     public Location(String name){
         setName(name);
@@ -46,6 +48,13 @@ public class Location {
         this.description = description;
     }
 
+    public void setMazeExit(boolean mazeExit, String exitDir, Location location){
+        this.mazeExit = mazeExit;
+        this.exitDir = exitDir;
+        addConnection(location, exitDir);
+        location.addConnection(this, Main.getMazeExitDir());
+    }
+
     @Override
     public String toString() {
         String newDesc = description;
@@ -62,6 +71,7 @@ public class Location {
                 newDesc += ", One to the " + key;
             }
         }
+        if(mazeExit) newDesc += ". The exit seems to be to the " + exitDir;
         return newDesc;
     }
 }

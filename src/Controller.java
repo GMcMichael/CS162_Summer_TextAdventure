@@ -6,11 +6,13 @@ public class Controller {
     private Scanner scanner;
     private static HashMap<String, Command> allCommands = new HashMap<>();;
     private static Command command;
+    private static MapDisplay mapDisplay;
 
     public Controller(){
         scanner = new Scanner(System.in);
         new HelpCommand("help");
         new MoveCommand("move");
+        new MapCommand("map");
     }
 
     public Command Listen(){
@@ -40,5 +42,13 @@ public class Controller {
 
     public static int randomNumber(int min, int max){
         return (int) ((Math.random() * (max - min)) + min);
+    }
+
+    public static void setMapDisplay(MapDisplay mapDisplay){
+        Controller.mapDisplay = mapDisplay;
+    }
+
+    public static void moved(){
+        mapDisplay.getNewCoords();
     }
 }

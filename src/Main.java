@@ -38,7 +38,7 @@ public class Main {
         }
     }
 
-    private static Location[][] generateMaze(int mazeRows, int mazeCols){
+    private static Location[][] generateMaze(int mazeRows, int mazeCols){//todo make to so that you need to find a key or something to open the exit
         Location[][] dirs = new Location[mazeRows][mazeCols];
         int remaining = (mazeRows * mazeCols) - 1;
         mazeRows--;
@@ -92,9 +92,8 @@ public class Main {
         }
         startLocation = dirs[sX][sY];
         mazeExit = new Location("Maze Exit");
-        System.out.println(sX + " " + sY);
-        setStartLocation(startLocation, dir);//todo this sets start to exit, change to random but not exit
-        mapDisplay = new MapDisplay(50, dirs);//todo I generate the map image here
+        setStartLocation(startLocation, dir);//todo this sets start to exit, change to random
+        mapDisplay = new MapDisplay(player, 50, dirs, sX, sY);//todo maybe make the exit not drawn at all, right now it is only drawn if it is on the right or bottom edge. also maybe make the exit in the maze with a hatch instead of an extra room.
         return dirs;
     }
 

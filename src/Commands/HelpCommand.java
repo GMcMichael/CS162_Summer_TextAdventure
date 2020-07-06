@@ -20,7 +20,7 @@ public class HelpCommand extends Command{
         System.out.print("\nPress enter to continue. \n--- \n> ");
         Scanner scanner = new Scanner(System.in);
         scanner.nextLine();
-        Main.setMapDisplay(new MapDisplay(50, Main.getCurrLocation()));
+        //Main.setMapDisplay(new MapDisplay(50, Main.getCurrLocation())); //Why was this here???
         return true;
     }
 }

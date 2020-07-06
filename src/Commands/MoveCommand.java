@@ -9,6 +9,7 @@ public class MoveCommand extends Command {
         Location newLoc = getCurrLocation().getConnection(getModifier());
         if(newLoc != null) setCurrLocation(newLoc);
         else return false;
+        Controller.moved();
         return true;
     }
 

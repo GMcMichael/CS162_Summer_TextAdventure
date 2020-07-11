@@ -2,8 +2,8 @@ public class MapCommand extends Command {
 
     private MapDisplay mapDisplay;
 
-    public MapCommand(String activator) {
-        super(activator);
+    public MapCommand() {
+        super("map");
     }
 
     @Override

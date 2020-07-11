@@ -1,3 +1,5 @@
+import java.util.HashMap;
+
 public class Player {
     private Location currLocation;
     private int health;
@@ -5,17 +7,22 @@ public class Player {
     private int water;
     private int sleep;
     private int stamina;
+    private int money;
+    private NPCharacter interacting;
+    private HashMap<String, Item> equiped = new HashMap<>();
+    private HashMap<String, Item> inventory = new HashMap<>();
 
-    public Player(int health, int food, int water, int sleep, int stamina){
+    public Player(int health, int food, int water, int sleep, int stamina, int money){
         this.health = health;
         this.food = food;
         this.water = water;
         this.sleep = sleep;
         this.stamina = stamina;
+        this.money = money;
     }
 
     public Player(){
-        this(100, 100, 100, 100, 100);
+        this(100, 100, 100, 100, 100, 15);
     }
 
     public Location getCurrLocation() {
@@ -64,6 +71,30 @@ public class Player {
 
     public void setStamina(int stamina) {
         this.stamina = stamina;
+    }
+
+    public int getMoney() {
+        return money;
+    }
+
+    public void setMoney(int money) {
+        this.money = money;
+    }
+
+    public void addItem(Item item, String type){
+        inventory.put(type, item);
+    }
+
+    public void removeItem(Item item, String type){
+        inventory.remove(type, item);
+    }
+
+    public NPCharacter getInteracting() {
+        return interacting;
+    }
+
+    public void setInteracting(NPCharacter interacting) {
+        this.interacting = interacting;
     }
 
     @Override

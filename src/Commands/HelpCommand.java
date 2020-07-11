@@ -2,11 +2,15 @@ import java.util.Scanner;
 
 public class HelpCommand extends Command{
 
-    String[] commandList = {"Help: This command displays all the commands and their requirements if they have any.",
-                            "Move: This command moves your player though the world, it requires a trailing cardinal direction to activate"};
+    String[] commandList = {"Help: This command displays all the commands, and their requirements if they have any.",
+                            "Move: This command moves your player though the world, it requires a trailing cardinal direction to activate.",
+                            "Map: This command open a map window to help you navigate the games locations easier.",
+                            "Buy: This command attempts to buy an item identified by the trailing word.",
+                            "Talk: This command attempts to start talking with another character by the name of the trailing word.",
+                            "Interact: This command attempts to interact with an object using the trailing word to identify it."};
 
-    public HelpCommand(String activator) {
-        super(activator);
+    public HelpCommand() {
+        super("help");
     }
 
     @Override
@@ -17,10 +21,7 @@ public class HelpCommand extends Command{
         for (String s: commandList) {
             System.out.println("-" + s);
         }
-        System.out.print("\nPress enter to continue. \n--- \n> ");
-        Scanner scanner = new Scanner(System.in);
-        scanner.nextLine();
-        //Main.setMapDisplay(new MapDisplay(50, Main.getCurrLocation())); //Why was this here???
+        Main.waitForPress();
         return true;
     }
 }

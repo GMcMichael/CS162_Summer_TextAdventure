@@ -11,7 +11,7 @@ public abstract class Command {
     abstract boolean run();
 
     public void setModifier(String modifier){
-        if(modifier != null) this.modifier = modifier;
+        this.modifier = modifier;
     }
 
     public String getModifier(){

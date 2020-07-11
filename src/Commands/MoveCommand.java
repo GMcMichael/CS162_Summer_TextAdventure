@@ -1,7 +1,7 @@
 public class MoveCommand extends Command {
 
-    public MoveCommand(String activator) {
-        super(activator);
+    public MoveCommand() {
+        super("move");
     }
 
     @Override
@@ -10,6 +10,7 @@ public class MoveCommand extends Command {
         if(newLoc != null) setCurrLocation(newLoc);
         else return false;
         Controller.moved();
+        Main.getPlayer().setInteracting(null);
         return true;
     }
 

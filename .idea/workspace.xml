@@ -2,9 +2,36 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b21e0314-b505-4701-851f-25f14f941aff" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/MazeGeneration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Commands/BuyCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Commands/InteractCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Commands/TalkCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Generation/TownGeneration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Generation/WorldMapGeneration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Items/Item.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Items/Weapons/SwordItem.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Items/Weapons/WeaponItem.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Locations/MazeLocation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/NPCharacter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Quest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CS162 _TextBased.iml" beforeDir="false" afterPath="$PROJECT_DIR$/CS162 _TextBased.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS162 _TextBased/Command.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CS162 _TextBased/Command.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS162 _TextBased/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CS162 _TextBased/Controller.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS162 _TextBased/HelpCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CS162 _TextBased/HelpCommand.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS162 _TextBased/Location.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CS162 _TextBased/Location.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS162 _TextBased/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CS162 _TextBased/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS162 _TextBased/MapCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CS162 _TextBased/MapCommand.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS162 _TextBased/MoveCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CS162 _TextBased/MoveCommand.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS162 _TextBased/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CS162 _TextBased/Player.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Command.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Commands/Command.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Commands/HelpCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Commands/HelpCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Commands/MapCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Commands/MapCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Commands/MoveCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Commands/MoveCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Location.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Locations/Location.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MazeGeneration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Generation/MazeGeneration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Player.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,6 +61,11 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
+  <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
@@ -62,6 +94,10 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
+    <state x="552" y="198" key="#Getter_Template" timestamp="1594458576558">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="552" y="198" key="#Getter_Template/0.0.1920.1080@0.0.1920.1080" timestamp="1594458576558" />
     <state x="552" y="198" width="816" height="730" key="#Intentions" timestamp="1593680267690">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -70,46 +106,58 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="72" y="201" key="#Project_Structure/0.0.1920.1080@0.0.1920.1080" timestamp="1593596925935" />
-    <state x="765" y="223" key="#com.intellij.ide.util.MemberChooser" timestamp="1594031499627">
+    <state x="765" y="223" key="#com.intellij.ide.util.MemberChooser" timestamp="1594458580588">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="765" y="223" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1080@0.0.1920.1080" timestamp="1594031499627" />
+    <state x="765" y="223" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1080@0.0.1920.1080" timestamp="1594458580588" />
     <state x="133" y="468" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1593597311031">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="133" y="468" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1593597311031" />
+    <state x="756" y="399" width="408" height="289" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1594458370326">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="756" y="399" width="408" height="289" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1920.1080@0.0.1920.1080" timestamp="1594458370326" />
     <state x="276" y="423" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.packages" timestamp="1593597313813">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="276" y="423" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.packages/0.0.1920.1080@0.0.1920.1080" timestamp="1593597313813" />
-    <state width="1517" height="241" key="GridCell.Tab.0.bottom" timestamp="1594032035305">
+    <state x="697" y="70" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1594459605026">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1517" height="241" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1594032035305" />
-    <state width="1517" height="241" key="GridCell.Tab.0.center" timestamp="1594032035305">
+    <state x="697" y="70" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1594459605026" />
+    <state x="690" y="286" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1594440586740">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1517" height="241" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1594032035305" />
-    <state width="1517" height="241" key="GridCell.Tab.0.left" timestamp="1594032035305">
+    <state x="690" y="286" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1594440586740" />
+    <state width="1877" height="241" key="GridCell.Tab.0.bottom" timestamp="1594461625399">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1517" height="241" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1594032035305" />
-    <state width="1517" height="241" key="GridCell.Tab.0.right" timestamp="1594032035305">
+    <state width="1877" height="241" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1594461625399" />
+    <state width="1877" height="241" key="GridCell.Tab.0.center" timestamp="1594461625399">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1517" height="241" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1594032035305" />
-    <state x="0" y="117" key="SettingsEditor" timestamp="1593596991332">
+    <state width="1877" height="241" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1594461625399" />
+    <state width="1877" height="241" key="GridCell.Tab.0.left" timestamp="1594461625399">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="0" y="117" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1593596991332" />
+    <state width="1877" height="241" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1594461625399" />
+    <state width="1877" height="241" key="GridCell.Tab.0.right" timestamp="1594461625399">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1877" height="241" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1594461625399" />
+    <state x="0" y="117" key="SettingsEditor" timestamp="1594458366475">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="0" y="117" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1594458366475" />
     <state x="296" y="321" key="chooseDestDirectoryDialog" timestamp="1593597298370">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="296" y="321" key="chooseDestDirectoryDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1593597298370" />
-    <state x="656" y="363" key="com.intellij.ide.util.TipDialog" timestamp="1594108910947">
+    <state x="656" y="363" key="com.intellij.ide.util.TipDialog" timestamp="1594436113788">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="656" y="363" key="com.intellij.ide.util.TipDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1594108910947" />
+    <state x="656" y="363" key="com.intellij.ide.util.TipDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1594436113788" />
     <state x="198" y="136" width="607" height="804" key="find.popup" timestamp="1593597236738">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>

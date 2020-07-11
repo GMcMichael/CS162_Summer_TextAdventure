@@ -42,11 +42,17 @@ public class Main {
         player.setCurrLocation(getStartLocation());
     }
 
+    private static void startTown(){
+        ArrayList<Location> town = TownGeneration.generateTown(true, true, true, true);
+        player.setCurrLocation(town.get(0));
+    }
+
     private static void startGame(){
         textBuffer();
-        controller = new Controller();
         player = new Player();
-        startMaze();//starts maze creation
+        controller = new Controller();
+        //startMaze();//maze works, just set exit to an actual location in actual use
+        startTown();
         //do game stuff
         gameRunning = true;
         while (gameRunning) {
@@ -58,9 +64,8 @@ public class Main {
 
     private static void getCommand(){
         Command command = controller.Listen();
-        if (!command.run()){
-            unknownInput();
-            System.out.println("\n" + player.toString());
+        if (command == null || !command.run()){
+            System.out.println(player.toString());
             getCommand();
         }
     }
@@ -68,6 +73,7 @@ public class Main {
     public static void unknownInput(){
         Main.textBuffer();
         System.out.println("Sorry, I don't understand. Please try again.");
+        waitForPress();
     }
 
     public static void textBuffer(){
@@ -82,17 +88,8 @@ public class Main {
         return startLocation;
     }
 
-    public static void setStartLocation(Location startLocation, String dir) {
-        startLocation.setMazeExit(true, dir, new Location("Maze Exit"));//set exit beside start location here
+    public static void setStartLocation(Location startLocation) {
         Main.startLocation = startLocation;
-    }
-
-    public static String getMazeExitDir() {
-        return mazeExitDir;
-    }
-
-    public static void setMazeExitDir(String mazeExitDir){
-        Main.mazeExitDir = mazeExitDir;
     }
 
     public static MapDisplay getMapDisplay() {
@@ -106,4 +103,11 @@ public class Main {
     public static Location[][] getCurrLocation() {
         return currLocation;
     }
+
+    public static void waitForPress(){
+        System.out.print("\nPress enter to continue. \n--- \n> ");
+        Scanner scanner = new Scanner(System.in);
+        scanner.nextLine();
+    }
+
 }

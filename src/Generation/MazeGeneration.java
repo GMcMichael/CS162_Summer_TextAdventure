@@ -30,8 +30,8 @@ public class MazeGeneration {
         nX = Controller.randomNumber(0, mazeCols);
         nY = Controller.randomNumber(0, mazeRows);
         startLocation = dirs[nX][nY];
-        Main.setStartLocation(startLocation);
-        Main.setMapDisplay(new MapDisplay(Main.getPlayer(), 50, dirs, nX, nY));
+        /*Main.setStartLocation(startLocation);
+        Main.setMapDisplay(new MapDisplay(Main.getPlayer(), 50, dirs, nX, nY));*///the map is created here
         return dirs;
     }
 

@@ -12,6 +12,7 @@ public class InteractCommand extends Command{
 
     @Override
     boolean run() {
+        //todo create interact command
         return false;
     }
 }

@@ -1,11 +1,17 @@
 import java.util.ArrayList;
 
-public class TownGeneration {//todo make a map with just a simple random square setup without paths to show where you are without any real functionality
+public class TownGeneration {
 
-    private static ArrayList<Location> townLocations = new ArrayList<Location>();
-    private static ArrayList<String> townLocNames = new ArrayList<String>();
+    private static ArrayList<Location> townLocations;
+    private static ArrayList<String> townLocNames;
 
-    public static ArrayList<Location> generateTown(boolean castle, boolean tavern, boolean inn, boolean market){//todo add more places
+    public static Location[][] generateTown(){
+        return generateTown(true, true, true, true);
+    }
+
+    public static Location[][] generateTown(boolean castle, boolean tavern, boolean inn, boolean market){//todo add more places
+        townLocations = new ArrayList<Location>();
+        townLocNames = new ArrayList<String>();
         townLocations.add(generateSquare());
         if(castle) townLocations.add(generateCastle());
         if(tavern) townLocations.add(generateTavern());
@@ -21,7 +27,19 @@ public class TownGeneration {//todo make a map with just a simple random square 
         for (Location loc: townLocations) {//todo change NPC generation so more than one can be at a location
             if(Controller.randomNumber(0, 4) > 0) loc.addCharacter(new NPCharacter());
         }
-        return townLocations;
+        int num = (townLocations.size()+1)/2;
+        Location [][] townLocs = new Location[num][num];
+
+        for (int i = 0; i < num; i++) {
+            for (int j = 0; j < num; j++) {
+                if(((num*i)+j) < townLocations.size()){
+                    townLocs[i][j] = townLocations.get((num*i)+j);
+                }
+            }
+        }
+        /*Main.setStartLocation(townLocs[0][0]);
+        Main.setMapDisplay(new MapDisplay(Main.getPlayer(), 50, townLocs, 0, 0));*/
+        return townLocs;
     }
 
     private static Location generateSquare(){

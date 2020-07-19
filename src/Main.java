@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
@@ -8,10 +7,12 @@ public class Main {
     private static Player player;
     private static Controller controller;
     private static boolean gameRunning;
-    private static ArrayList<Location[][]> RoomLists = new ArrayList<Location[][]>();
+    private static WorldLocation[][] world;
     private static Location startLocation;
+    private static WorldLocation startWorldLocation;
     private static Location[][] currLocation;
     private static MapDisplay mapDisplay;
+    private static OverworldMapDisplay overworldMapDisplay;
     private static String mazeExitDir;
 
     public static void main(String[] args){
@@ -37,22 +38,43 @@ public class Main {
 
     private static void startMaze(){
         Location[][] maze = MazeGeneration.generateMaze(5, 5);
-        RoomLists.add(maze);
         currLocation = maze;
         player.setCurrLocation(getStartLocation());
     }
 
     private static void startTown(){
-        ArrayList<Location> town = TownGeneration.generateTown(true, true, true, true);
-        player.setCurrLocation(town.get(0));
+        Location[][] town = TownGeneration.generateTown(true, true, true, true);
+        currLocation = town;
+        player.setCurrLocation(getStartLocation());
     }
 
-    private static void startGame(){
+    private static void startPath(){
+        /*Location[][] path = PathGeneration.generatePath();//broke because I made it need a WorldLocation passed in to set the worlds color
+        currLocation = path;
+        player.setCurrLocation(getStartLocation());*/
+    }
+
+    private static void startWorld(){
+        world = WorldMapGeneration.generateWorld(5, 5);
+        /*for (int i = 0; i < 5; i++) {
+            for (int j = 0; j < 5; j++) {
+                System.out.print(world[i][j].getType() + ", ");
+            }
+            System.out.println("");
+        }
+        waitForPress();*/
+        player.setCurrLocation(getStartLocation());
+        player.setCurrWorldLocation(getStartWorldLocation());
+    }
+
+    private static void startGame(){//todo add food and water needs
         textBuffer();
         player = new Player();
         controller = new Controller();
         //startMaze();//maze works, just set exit to an actual location in actual use
-        startTown();
+        //startTown();//town works
+        //startPath();//path works but this function is broken for now
+        startWorld();
         //do game stuff
         gameRunning = true;
         while (gameRunning) {
@@ -92,12 +114,28 @@ public class Main {
         Main.startLocation = startLocation;
     }
 
+    public static WorldLocation getStartWorldLocation() {
+        return startWorldLocation;
+    }
+
+    public static void setStartWorldLocation(WorldLocation startWorldLocation) {
+        Main.startWorldLocation = startWorldLocation;
+    }
+
     public static MapDisplay getMapDisplay() {
         return mapDisplay;
     }
 
     public static void setMapDisplay(MapDisplay mapDisplay) {
         Main.mapDisplay = mapDisplay;
+    }
+
+    public static OverworldMapDisplay getOverworldMapDisplay() {
+        return overworldMapDisplay;
+    }
+
+    public static void setOverworldMapDisplay(OverworldMapDisplay overworldMapDisplay) {
+        Main.overworldMapDisplay = overworldMapDisplay;
     }
 
     public static Location[][] getCurrLocation() {

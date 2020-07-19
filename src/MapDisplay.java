@@ -10,6 +10,8 @@ public class MapDisplay extends JFrame {
     private Location[][] currLocation;
     private int currX;
     private int currY;
+    private int xOffset;
+    private int yOffset;
 
     public MapDisplay(Player player, int nodeDims, Location[][] currLocation, int sX, int sY){
         super("Map");
@@ -20,8 +22,11 @@ public class MapDisplay extends JFrame {
         this.currLocation = currLocation;
         this.currX = sX;
         this.currY = sY;
-        setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+        this.xOffset = nodeDims/10;
+        this.yOffset = (int) (nodeDims*0.6);
+        setDefaultCloseOperation(HIDE_ON_CLOSE);
         setSize((currLocation.length+1)*nodeDims, (currLocation[0].length+1)*nodeDims);
+        setLocationRelativeTo(null);
         setVisible(false);
         Controller.setMapDisplay(this);
     }
@@ -37,6 +42,7 @@ public class MapDisplay extends JFrame {
         if(!discover){
             for(int i = 0; i < currLocation.length; i++){
                 for(int j = 0; j < currLocation[i].length; j++){
+                    if(currLocation[i][j] == null) break;
                     if(currLocation[i][j].getConnection("south") != null) drawSouth(i, j, g);
                     if(currLocation[i][j].getConnection("east") != null) drawEast(i, j, g);
                 }
@@ -49,8 +55,8 @@ public class MapDisplay extends JFrame {
         int y1 = (nodeDims * y) + nodeDims/4;
         int x2 = (nodeDims * x) + (nodeDims - (nodeDims/4));
         int y2 = (nodeDims * (y+1)) + (nodeDims - (nodeDims/4));
-        int xOffset = 5;
-        int yOffset = 30;
+        int xOffset = nodeDims/10;
+        int yOffset = (int) (nodeDims*0.6);
         g.fillRect(x1 + xOffset, y1 + yOffset, Math.abs((x2-x1)), Math.abs((y2-y1)));
     }
 
@@ -60,7 +66,7 @@ public class MapDisplay extends JFrame {
         int x2 = (nodeDims * (x+1)) + (nodeDims - (nodeDims/4));
         int y2 = (nodeDims * y) + (nodeDims - (nodeDims/4));
         int xOffset = 5;
-        int yOffset = 30;
+        int yOffset = (int) (nodeDims*0.6);
         g.fillRect(x1 + xOffset, y1 + yOffset, Math.abs((x2-x1)), Math.abs((y2-y1)));
     }
 
@@ -69,6 +75,7 @@ public class MapDisplay extends JFrame {
         int sideLength = nodeDims - (nodeDims/4);
         for(int i = 0; i < currLocation.length; i++){
             for(int j = 0; j < currLocation[i].length; j++){
+                if(currLocation[i][j] == null) break;
                 if(i == currX && j == currY) g.setColor(Color.CYAN);
                 else g.setColor(Color.gray);
                 g.fillRect((i*nodeDims) + offset, (nodeDims/2) + (j*nodeDims) + offset, sideLength, sideLength);
@@ -90,4 +97,21 @@ public class MapDisplay extends JFrame {
         this.repaint();
     }
 
+    public void setCurrLocation(Location[][] currLocation) {
+        this.currLocation = currLocation;
+        getNewCoords();
+        setSize((currLocation.length+1)*nodeDims, (currLocation[0].length+1)*nodeDims);
+    }
+
+    public void close(){
+        this.dispose();
+    }
+
+    public int getCurrX() {
+        return currX;
+    }
+
+    public int getCurrY() {
+        return currY;
+    }
 }

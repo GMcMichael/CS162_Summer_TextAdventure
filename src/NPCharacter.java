@@ -105,7 +105,7 @@ public class NPCharacter {
         if(player.getMoney() >= price) {
             player.setMoney(player.getMoney() - price);
             selling.remove(type, item);
-            player.addItem(item, type);
+            player.addItem(item);
             System.out.println(getThanks());
             Main.waitForPress();
         } else {

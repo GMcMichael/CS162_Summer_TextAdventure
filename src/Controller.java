@@ -7,6 +7,7 @@ public class Controller {
     private static HashMap<String, Command> allCommands = new HashMap<>();;
     private static Command command;
     private static MapDisplay mapDisplay;
+    private static OverworldMapDisplay OverworldMapDisplay;
     private Player player;
 
     public Controller(){
@@ -15,9 +16,12 @@ public class Controller {
         new HelpCommand();
         new MoveCommand();
         new MapCommand();
+        new OverworldMapCommand();
         new BuyCommand();
         new TalkCommand();
         new InteractCommand();
+        new OverworldMoveCommand();
+        new InventoryCommand();
     }
 
     public Command Listen(){
@@ -32,7 +36,8 @@ public class Controller {
 
         command = allCommands.get(word1.toLowerCase());
         if(command == null) unknownInput(word1);
-        if(word2 != null) command.setModifier(word2.toLowerCase());
+        else if(word2 != null) command.setModifier(word2.toLowerCase());
+        else command.setModifier(null);
         return command;
     }
 
@@ -65,7 +70,15 @@ public class Controller {
         Controller.mapDisplay = mapDisplay;
     }
 
+    public static void setOverworldMapDisplay(OverworldMapDisplay overworldMapDisplay) {
+        OverworldMapDisplay = overworldMapDisplay;
+    }
+
     public static void moved(){
         if(mapDisplay != null) mapDisplay.getNewCoords();
+    }
+
+    public static void movedWorld(){
+        if(OverworldMapDisplay != null) OverworldMapDisplay.getNewCoords();
     }
 }

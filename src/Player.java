@@ -1,6 +1,8 @@
+import java.util.ArrayList;
 import java.util.HashMap;
 
 public class Player {
+    private WorldLocation currWorldLocation;
     private Location currLocation;
     private int health;
     private int food;
@@ -10,7 +12,7 @@ public class Player {
     private int money;
     private NPCharacter interacting;
     private HashMap<String, Item> equiped = new HashMap<>();
-    private HashMap<String, Item> inventory = new HashMap<>();
+    private ArrayList<Item> inventory = new ArrayList<Item>();
 
     public Player(int health, int food, int water, int sleep, int stamina, int money){
         this.health = health;
@@ -23,6 +25,14 @@ public class Player {
 
     public Player(){
         this(100, 100, 100, 100, 100, 15);
+    }
+
+    public WorldLocation getCurrWorldLocation() {
+        return currWorldLocation;
+    }
+
+    public void setCurrWorldLocation(WorldLocation currWorldLocation) {
+        this.currWorldLocation = currWorldLocation;
     }
 
     public Location getCurrLocation() {
@@ -81,12 +91,12 @@ public class Player {
         this.money = money;
     }
 
-    public void addItem(Item item, String type){
-        inventory.put(type, item);
+    public void addItem(Item item){
+        inventory.add(item);
     }
 
-    public void removeItem(Item item, String type){
-        inventory.remove(type, item);
+    public void removeItem(Item item){
+        inventory.remove(item);
     }
 
     public NPCharacter getInteracting() {
@@ -95,6 +105,10 @@ public class Player {
 
     public void setInteracting(NPCharacter interacting) {
         this.interacting = interacting;
+    }
+
+    public ArrayList<Item> getInventory() {
+        return inventory;
     }
 
     @Override

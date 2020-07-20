@@ -1,6 +1,10 @@
+import java.util.ArrayList;
+
 public class WorldMapGeneration {
 
     private static int types = 2;
+    private static ArrayList<int[]> townCoords;
+    private static int minTownDist = 5;//todo update spacing
 
     public static WorldLocation[][] generateWorld(int rows, int cols){
         return generateWorld(rows, cols, -1);
@@ -10,12 +14,12 @@ public class WorldMapGeneration {
         //todo generate random towns with paths and different locations (forests, rivers, mountains, ruins) between them
         int spaces = rows*cols;
         if(towns == -1) towns = spaces/5;
-        if(towns == 0) towns = 1;
+        if(towns == 0) towns = 1;//todo towns isn't used
         WorldLocation[][] world = new WorldLocation[cols][rows];
-        int[][] townCoords = new int[towns][2];
+        townCoords = new ArrayList<>();
         for (int i = 0; i < cols; i++) {
             for (int j = 0; j < rows; j++) {
-                world[i][j] = generateLocation();
+                world[i][j] = generateLocation(i, j);
             }
         }
         for (int i = 0; i < cols; i++) {
@@ -32,11 +36,23 @@ public class WorldMapGeneration {
         return world;
     }
 
-    private static WorldLocation generateLocation(){
+    private static WorldLocation generateLocation(int x, int y){
         WorldLocation worldLocation = new WorldLocation();
-        switch (Controller.randomNumber(0, types)) {
+        int type = Controller.randomNumber(0, types);
+        if(type == 0){
+            for (int[] coords: townCoords) {
+                if(x != coords[0] || y != coords[1]) {
+                    double dist = Math.sqrt(Math.pow((x - coords[0]), 2) + Math.pow((y - coords[1]), 2));
+                    if (dist < minTownDist) {
+                        type = Controller.randomNumber(1, types);
+                    }
+                }
+            }
+        }
+        switch (type) {
             case 0:
                 worldLocation.generateTown();
+                townCoords.add(new int[] {x, y});
                 break;
             case 1:
                 worldLocation.generatePath();

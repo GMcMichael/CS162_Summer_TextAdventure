@@ -23,7 +23,7 @@ public class OverworldMapDisplay extends JFrame {
         this.xOffset = nodeDims/10;
         this.yOffset = (int) (nodeDims*0.6);
         setDefaultCloseOperation(HIDE_ON_CLOSE);
-        setSize((currLocation.length+1)*nodeDims, (currLocation[0].length+1)*nodeDims);
+        setSize(((currLocation.length)*nodeDims) + xOffset*2, ((currLocation[0].length)*nodeDims) + yOffset*2);
         setLocationRelativeTo(null);
         setVisible(false);
         Controller.setOverworldMapDisplay(this);

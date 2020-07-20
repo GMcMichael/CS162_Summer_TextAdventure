@@ -55,7 +55,7 @@ public class Main {
     }
 
     private static void startWorld(){
-        world = WorldMapGeneration.generateWorld(5, 5);
+        world = WorldMapGeneration.generateWorld(20, 20);
         /*for (int i = 0; i < 5; i++) {
             for (int j = 0; j < 5; j++) {
                 System.out.print(world[i][j].getType() + ", ");

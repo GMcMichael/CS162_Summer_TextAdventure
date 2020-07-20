@@ -1,12 +1,13 @@
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class Location {
+public class Location {//todo add a color to use in the maps
 
     private HashMap<String, Location> connections = new HashMap<>();
     private String name;
     private String description = "in an unknown area";
     private ArrayList<NPCharacter> NPCharacters = new ArrayList<>();
+    private HashMap<String, Item> items = new HashMap<>();
 
     public Location(String name){
         setName(name);
@@ -60,6 +61,14 @@ public class Location {
         NPCharacters.remove(NPCharacter);
     }
 
+    public void addItem(Item item){
+        items.put(item.getType(), item);
+    }
+
+    public void removeItem(Item item){
+        items.remove(item.getType(), item);
+    }
+
     public String displayCharacters(){
         String chars = "";
         if(NPCharacters.size() == 0) return "There are no people here";
@@ -74,6 +83,22 @@ public class Location {
             if(remaining != 0) chars += ", ";
         }
         return chars;
+    }
+
+    public String displayItems(){
+        String item = "";
+        if(items.size() == 0) return "There are no items here";
+        if(items.size() == 1) item = "There is 1 item here";
+        else item = "There are " + items.size() + " items here";
+        if(items.size() == 1) item += ". It is a ";
+        else item += "They are: ";
+        int remaining = items.size();
+        for (Item it: items.values()) {
+            item += it.getType();
+            remaining--;
+            if(remaining != 0) item += ", ";
+        }
+        return item;
     }
 
     @Override
@@ -93,6 +118,7 @@ public class Location {
             }
         }
         newDesc += "\n" + displayCharacters();
+        newDesc += "\n" + displayItems();
         return newDesc;
     }
 }

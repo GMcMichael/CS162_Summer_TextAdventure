@@ -2,36 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b21e0314-b505-4701-851f-25f14f941aff" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Commands/InventoryCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Commands/OverworldMapCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Commands/OverworldMoveCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Generation/PathGeneration.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Locations/ForestPath.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Locations/Path.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Locations/WorldLocation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/OverworldMapDisplay.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CS162 _TextBased/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CS162 _TextBased/Controller.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CS162 _TextBased/InteractCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CS162 _TextBased/InteractCommand.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CS162 _TextBased/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CS162 _TextBased/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CS162 _TextBased/MapCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CS162 _TextBased/MapCommand.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CS162 _TextBased/MapDisplay.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CS162 _TextBased/MapDisplay.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CS162 _TextBased/MazeGeneration.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CS162 _TextBased/MazeGeneration.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CS162 _TextBased/NPCharacter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CS162 _TextBased/NPCharacter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CS162 _TextBased/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CS162 _TextBased/Player.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CS162 _TextBased/TownGeneration.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CS162 _TextBased/TownGeneration.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CS162 _TextBased/WorldMapGeneration.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CS162 _TextBased/WorldMapGeneration.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Commands/InteractCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Commands/InteractCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Commands/MapCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Commands/MapCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Generation/MazeGeneration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Generation/MazeGeneration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Generation/TownGeneration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Generation/TownGeneration.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Generation/WorldMapGeneration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Generation/WorldMapGeneration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Locations/Location.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Locations/Location.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MapDisplay.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MapDisplay.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/NPCharacter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/NPCharacter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Quest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Quest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/OverworldMapDisplay.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/OverworldMapDisplay.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -130,22 +105,22 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="690" y="286" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1594440586740" />
-    <state width="1548" height="241" key="GridCell.Tab.0.bottom" timestamp="1595154449710">
+    <state width="1559" height="241" key="GridCell.Tab.0.bottom" timestamp="1595245860999">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1548" height="241" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1595154449710" />
-    <state width="1548" height="241" key="GridCell.Tab.0.center" timestamp="1595154449710">
+    <state width="1559" height="241" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1595245860999" />
+    <state width="1559" height="241" key="GridCell.Tab.0.center" timestamp="1595245860998">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1548" height="241" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1595154449710" />
-    <state width="1548" height="241" key="GridCell.Tab.0.left" timestamp="1595154449710">
+    <state width="1559" height="241" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1595245860998" />
+    <state width="1559" height="241" key="GridCell.Tab.0.left" timestamp="1595245860998">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1548" height="241" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1595154449710" />
-    <state width="1548" height="241" key="GridCell.Tab.0.right" timestamp="1595154449710">
+    <state width="1559" height="241" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1595245860998" />
+    <state width="1559" height="241" key="GridCell.Tab.0.right" timestamp="1595245860998">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1548" height="241" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1595154449710" />
+    <state width="1559" height="241" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1595245860998" />
     <state x="0" y="117" key="SettingsEditor" timestamp="1594458366475">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -154,9 +129,10 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="296" y="321" key="chooseDestDirectoryDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1593597298370" />
-    <state x="656" y="363" key="com.intellij.ide.util.TipDialog" timestamp="1595119724860">
-      <screen x="0" y="0" width="1920" height="1080" />
+    <state x="574" y="353" key="com.intellij.ide.util.TipDialog" timestamp="1595224004501">
+      <screen x="0" y="0" width="1680" height="1050" />
     </state>
+    <state x="574" y="353" key="com.intellij.ide.util.TipDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1595224004501" />
     <state x="656" y="363" key="com.intellij.ide.util.TipDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1595119724860" />
     <state x="198" y="136" width="607" height="804" key="find.popup" timestamp="1593597236738">
       <screen x="0" y="0" width="1920" height="1080" />

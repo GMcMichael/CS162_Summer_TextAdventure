@@ -1,4 +1,4 @@
-import java.awt.*;
+import java.awt.Color;
 
 public class PathGeneration {
 
@@ -31,7 +31,7 @@ public class PathGeneration {
         }
     }
 
-    private static void setColor(int type, WorldLocation worldLocation){
+    private static void setColor(int type, WorldLocation worldLocation){//maybe remove this if its unused
         switch (type){
             default:
                 worldLocation.setMapColor(new Color(0, 100, 0));

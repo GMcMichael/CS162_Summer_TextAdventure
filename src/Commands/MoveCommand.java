@@ -10,6 +10,7 @@ public class MoveCommand extends Command {
         if(newLoc != null) setCurrLocation(newLoc);
         else return false;
         Controller.moved();
+        Controller.movedWorld();
         Main.getPlayer().setInteracting(null);
         return true;
     }

@@ -142,6 +142,10 @@ public class Main {
         return currLocation;
     }
 
+    public static WorldLocation[][] getWorld(){
+        return world;
+    }
+
     public static void waitForPress(){
         System.out.print("\nPress enter to continue. \n--- \n> ");
         Scanner scanner = new Scanner(System.in);

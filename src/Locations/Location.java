@@ -1,13 +1,16 @@
+import java.awt.Color;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class Location {//todo add a color to use in the maps
+public class Location {
 
     private HashMap<String, Location> connections = new HashMap<>();
     private String name;
     private String description = "in an unknown area";
     private ArrayList<NPCharacter> NPCharacters = new ArrayList<>();
     private HashMap<String, Item> items = new HashMap<>();
+    private Color mapColor;
+    private String type;
 
     public Location(String name){
         setName(name);
@@ -39,6 +42,22 @@ public class Location {//todo add a color to use in the maps
 
     public void setName(String name){
         this.name = name;
+    }
+
+    public Color getMapColor() {
+        return mapColor;
+    }
+
+    public void setMapColor(Color mapColor) {
+        this.mapColor = mapColor;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
     }
 
     public String getDescription() {

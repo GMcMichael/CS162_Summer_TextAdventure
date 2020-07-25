@@ -1,6 +1,6 @@
-public class ForestPath extends Path {
+import java.awt.Color;
 
-    private String baseDesc = "in a forest surrounded by trees";
+public class ForestPath extends Path {
 
     public ForestPath(){
         this("Forest");
@@ -8,11 +8,18 @@ public class ForestPath extends Path {
 
     public ForestPath(String name) {
         super(name);
-        setDescription(baseDesc);
     }
 
     public ForestPath(String name, int moveDifficulty, int npcChance) {
         super(name, moveDifficulty, npcChance);
-        setDescription(baseDesc);
     }
+
+    @Override
+    protected void setInfo(){
+        setDescription("in a forest surrounded by trees");
+        setMapColor(new Color(10, Controller.randomNumber(50, 150), 25));
+        setType("forest");
+    }
+
+
 }

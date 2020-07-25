@@ -1,3 +1,4 @@
+import java.awt.Color;
 import java.util.ArrayList;
 
 public class TownGeneration {
@@ -34,6 +35,8 @@ public class TownGeneration {
             for (int j = 0; j < num; j++) {
                 if(((num*i)+j) < townLocations.size()){
                     townLocs[i][j] = townLocations.get((num*i)+j);
+                    townLocations.get((num*i)+j).setMapColor(new Color(115, 100, Controller.randomNumber(10, 50)));
+                    townLocations.get((num*i)+j).setType("town");
                 }
             }
         }

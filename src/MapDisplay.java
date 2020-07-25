@@ -37,7 +37,6 @@ public class MapDisplay extends JFrame {
     }
 
     private void makeMap(Graphics g){
-        drawNodes(g);
         g.setColor(Color.black);
         if(!discover){
             for(int i = 0; i < currLocation.length; i++){
@@ -47,6 +46,7 @@ public class MapDisplay extends JFrame {
                     if(currLocation[i][j].getConnection("east") != null) drawEast(i, j, g);
                 }
             }
+            drawNodes(g);
         }
     }
 
@@ -77,7 +77,7 @@ public class MapDisplay extends JFrame {
             for(int j = 0; j < currLocation[i].length; j++){
                 if(currLocation[i][j] == null) break;
                 if(i == currX && j == currY) g.setColor(Color.CYAN);
-                else g.setColor(Color.gray);
+                else g.setColor(currLocation[i][j].getMapColor());
                 g.fillRect((i*nodeDims) + offset, (nodeDims/2) + (j*nodeDims) + offset, sideLength, sideLength);
             }
         }

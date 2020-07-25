@@ -1,3 +1,4 @@
+import java.awt.*;
 import java.util.HashMap;
 
 public class MazeLocation extends Location {
@@ -7,6 +8,7 @@ public class MazeLocation extends Location {
 
     public MazeLocation(String name) {
         super(name);
+        setMapColor(Color.gray);
     }
 
     public void setMazeExit(String exitDir, MazeLocation location){

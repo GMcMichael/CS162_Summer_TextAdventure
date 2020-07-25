@@ -13,6 +13,7 @@ public class MazeGeneration {
                 if(dirs[x][y] == null){
                     dirs[x][y] = new MazeLocation("Maze Room");
                     dirs[x][y].setDescription("in a dark stone hallway");
+                    dirs[x][y].setType("maze");
                 }
                 dirs[nCoords[0]][nCoords[1]] = new MazeLocation("Maze Room");
                 dirs[nCoords[0]][nCoords[1]].addConnection(dirs[x][y], Character.toString((char) nCoords[3]));
